@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetHub - Your Pet's Best Friend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --primary: #ff6b6b;
+        --secondary: #ffe066;
+        --accent: #4ecdc4;
+        --dark: #1a1a2e;
+        --light: #f8f9fa;
+      }
+
+      * {
+        @apply scroll-smooth;
+      }
+
+      body {
+        @apply bg-[var(--light)] text-[var(--dark)];
+      }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-2">
+            <div
+              class="w-8 h-8 bg-[#FF6B6B] rounded-lg flex items-center justify-center text-white font-bold"
+            >
+              🐾
+            </div>
+            <span class="font-bold text-xl">PetHub</span>
+          </div>
+          <div class="hidden md:flex gap-8 items-center">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-[#FF6B6B] transition"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-[#FF6B6B] transition"
+              >Services</a
+            >
+            <a
+              href="#products"
+              class="text-gray-700 hover:text-[#FF6B6B] transition"
+              >Shop</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-700 hover:text-[#FF6B6B] transition"
+              >Reviews</a
+            >
+          </div>
+          <button
+            class="bg-[#FF6B6B] text-white px-6 py-2 rounded-lg hover:bg-[#ff5252] transition font-medium"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="bg-gradient-to-br from-[#FFE066] to-[#FF6B6B] py-20 md:py-32"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1
+              class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+            >
+              Welcome to PetHub
+            </h1>
+            <p class="text-xl text-white mb-8 opacity-90">
+              Your complete solution for pet care. Find trusted services,
+              premium products, and connect with a community of pet lovers.
+            </p>
+            <div class="flex gap-4">
+              <button
+                class="bg-white text-[#FF6B6B] px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition"
+              >
+                Get Started
+              </button>
+              <button
+                class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="/placeholder.svg?height=400&width=400"
+              alt="Happy pets"
+              class="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[var(--dark)]">
+              About PetHub
+            </h2>
+            <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+              PetHub is dedicated to providing comprehensive care solutions for
+              your beloved pets. We bring together the best veterinary services,
+              premium pet products, and a vibrant community of pet enthusiasts.
+            </p>
+            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+              Founded in 2020, our mission is to make quality pet care
+              accessible to everyone. From adoption services to professional
+              grooming, we're committed to your pet's health and happiness.
+            </p>
+            <div class="flex gap-6">
+              <div>
+                <h4 class="text-2xl font-bold text-[#FF6B6B]">10K+</h4>
+                <p class="text-gray-600">Happy Pets</p>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-[#FF6B6B]">500+</h4>
+                <p class="text-gray-600">Trusted Providers</p>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-[#FF6B6B]">24/7</h4>
+                <p class="text-gray-600">Customer Support</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="/placeholder.svg?height=400&width=400"
+              alt="About PetHub"
+              class="rounded-2xl shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-[var(--light)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--dark)]"
+        >
+          Our Services
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          Everything your pet needs in one place
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Service 1: Vet Services -->
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-lg transition border border-blue-200"
+          >
+            <div class="text-5xl mb-4">⚕️</div>
+            <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">
+              Vet Services
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Professional veterinary care from certified professionals.
+              Schedule check-ups, vaccinations, and emergency care.
+            </p>
+            <button
+              class="text-[#FF6B6B] font-semibold hover:text-[#ff5252] transition"
+            >
+              Learn More →
+            </button>
+          </div>
+
+          <!-- Service 2: Pet Food -->
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-lg transition border border-yellow-200"
+          >
+            <div class="text-5xl mb-4">🍖</div>
+            <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">Pet Food</h3>
+            <p class="text-gray-700 mb-6">
+              Premium nutrition for all pet types. From premium brands to
+              specialized diets tailored to your pet's health.
+            </p>
+            <button
+              class="text-[#FF6B6B] font-semibold hover:text-[#ff5252] transition"
+            >
+              Learn More →
+            </button>
+          </div>
+
+          <!-- Service 3: Accessories -->
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-lg transition border border-teal-200"
+          >
+            <div class="text-5xl mb-4">🎾</div>
+            <h3 class="text-2xl font-bold mb-3 text-[var(--dark)]">
+              Accessories & Toys
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Discover toys, bedding, collars, and gear to keep your pet happy,
+              comfortable, and entertained.
+            </p>
+            <button
+              class="text-[#FF6B6B] font-semibold hover:text-[#ff5252] transition"
+            >
+              Learn More →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added comprehensive Vet Services Products section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--dark)]"
+        >
+          Veterinary Services
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          Professional care from certified veterinarians
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Vet Service 1 -->
+          <div class="bg-[#f0f9ff] rounded-lg p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3">💉</div>
+            <h4 class="font-bold text-lg mb-2 text-[var(--dark)]">
+              Vaccinations
+            </h4>
+            <p class="text-gray-700 text-sm mb-4">
+              Complete vaccination packages for puppies and adult pets
+            </p>
+            <p class="text-[#FF6B6B] font-bold">$45-80</p>
+          </div>
+
+          <!-- Vet Service 2 -->
+          <div class="bg-[#f0f9ff] rounded-lg p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3">🦷</div>
+            <h4 class="font-bold text-lg mb-2 text-[var(--dark)]">
+              Dental Care
+            </h4>
+            <p class="text-gray-700 text-sm mb-4">
+              Professional cleaning and dental health checkups
+            </p>
+            <p class="text-[#FF6B6B] font-bold">$150-300</p>
+          </div>
+
+          <!-- Vet Service 3 -->
+          <div class="bg-[#f0f9ff] rounded-lg p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3">🔬</div>
+            <h4 class="font-bold text-lg mb-2 text-[var(--dark)]">Lab Tests</h4>
+            <p class="text-gray-700 text-sm mb-4">
+              Blood work, urinalysis, and diagnostic testing
+            </p>
+            <p class="text-[#FF6B6B] font-bold">$60-150</p>
+          </div>
+
+          <!-- Vet Service 4 -->
+          <div class="bg-[#f0f9ff] rounded-lg p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3">🏥</div>
+            <h4 class="font-bold text-lg mb-2 text-[var(--dark)]">Surgery</h4>
+            <p class="text-gray-700 text-sm mb-4">
+              Professional surgical procedures with expert care
+            </p>
+            <p class="text-[#FF6B6B] font-bold">$500+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added Pet Food Products section -->
+    <section class="py-20 bg-[var(--light)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--dark)]"
+        >
+          Premium Pet Food
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          Nutrition for healthy, happy pets
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Pet Food 1 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Dog Food"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">
+                Premium Dog Food
+              </h4>
+              <p class="text-gray-600 text-sm mb-3">High-protein formula</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$35.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pet Food 2 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Cat Food"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">
+                Cat Nutrition
+              </h4>
+              <p class="text-gray-600 text-sm mb-3">Grain-free formula</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$28.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pet Food 3 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Organic Food"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">
+                Organic Pet Food
+              </h4>
+              <p class="text-gray-600 text-sm mb-3">Natural ingredients</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$42.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pet Food 4 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Special Diet"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">Special Diet</h4>
+              <p class="text-gray-600 text-sm mb-3">Allergen-free</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$39.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added Accessories & Toys Products section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--dark)]"
+        >
+          Accessories & Toys
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          Keep your pet happy and entertained
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Accessory 1 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition border border-gray-200"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Collar"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">Smart Collar</h4>
+              <p class="text-gray-600 text-sm mb-3">GPS tracking</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$59.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessory 2 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition border border-gray-200"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Pet Bed"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">
+                Luxury Pet Bed
+              </h4>
+              <p class="text-gray-600 text-sm mb-3">Orthopedic design</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$89.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessory 3 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition border border-gray-200"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Toys"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">
+                Interactive Toys
+              </h4>
+              <p class="text-gray-600 text-sm mb-3">Set of 5</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$24.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessory 4 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition border border-gray-200"
+          >
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Grooming Kit"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-4">
+              <h4 class="font-bold text-lg text-[var(--dark)]">Grooming Kit</h4>
+              <p class="text-gray-600 text-sm mb-3">Complete set</p>
+              <div class="flex justify-between items-center">
+                <p class="text-[#FF6B6B] font-bold">$49.99</p>
+                <button
+                  class="bg-[#FF6B6B] text-white px-3 py-1 rounded hover:bg-[#ff5252] transition text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added Testimonials section -->
+    <section id="testimonials" class="py-20 bg-[var(--light)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--dark)]"
+        >
+          What Pet Owners Say
+        </h2>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+          Real reviews from happy customers
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#FF6B6B] rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                JM
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--dark)]">John Miller</h4>
+                <p class="text-gray-600 text-sm">Dog Owner</p>
+              </div>
+            </div>
+            <div class="flex mb-3">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700">
+              PetHub has been a game-changer for our family. The vet services
+              are excellent, and the product quality is unmatched. Highly
+              recommended!
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#4ECDC4] rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                SC
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--dark)]">Sarah Chen</h4>
+                <p class="text-gray-600 text-sm">Cat Owner</p>
+              </div>
+            </div>
+            <div class="flex mb-3">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700">
+              Amazing experience! The customer service team went above and
+              beyond to help with my cat's dietary needs. Great community too!
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#FFE066] rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                MR
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--dark)]">Mike Rodriguez</h4>
+                <p class="text-gray-600 text-sm">Multi-Pet Owner</p>
+              </div>
+            </div>
+            <div class="flex mb-3">
+              <span class="text-yellow-400">★★★★★</span>
+            </div>
+            <p class="text-gray-700">
+              Everything I need for my three dogs and two cats is in one place.
+              Convenient, reliable, and affordable. Can't ask for more!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Added Community CTA section -->
+    <section
+      class="py-20 bg-gradient-to-r from-[#4ECDC4] to-[#44A5A0] text-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Join Our Pet Community
+        </h2>
+        <p class="text-lg mb-8 opacity-90">
+          Connect with thousands of pet lovers, share stories, and get expert
+          advice.
+        </p>
+        <button
+          class="bg-white text-[#4ECDC4] px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition"
+        >
+          Join Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Added Newsletter section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-gradient-to-br from-[#FF6B6B] to-[#FFE066] rounded-2xl p-12 text-white text-center"
+        >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+          <p class="text-lg mb-8 opacity-90">
+            Get pet care tips, special offers, and news delivered to your inbox.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-6 py-3 rounded-lg text-gray-800 focus:outline-none"
+            />
+            <button
+              class="bg-white text-[#FF6B6B] px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--dark)] text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div
+                class="w-8 h-8 bg-[#FF6B6B] rounded-lg flex items-center justify-center font-bold"
+              >
+                🐾
+              </div>
+              <span class="font-bold text-lg">PetHub</span>
+            </div>
+            <p class="text-gray-400">Caring for your pet, one paw at a time.</p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Product</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Services</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Shop</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition"
+                  >Community</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">About</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Careers</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Legal</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Privacy</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Terms</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#FF6B6B] transition">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 PetHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
