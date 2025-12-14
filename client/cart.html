@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PawCare+ Cart</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f9f506",
+              "background-light": "#f8f8f5",
+              "background-dark": "#23220f",
+            },
+            fontFamily: {
+              display: ["Spline Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "1.5rem",
+              xl: "2rem",
+              "2xl": "2.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-neutral-900 dark:text-neutral-50 antialiased selection:bg-primary selection:text-black"
+  >
+    <div
+      class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark"
+    >
+      <!-- Top App Bar -->
+      <div
+        class="sticky top-0 z-20 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-neutral-200/50 dark:border-neutral-800/50"
+      >
+        <button
+          class="text-neutral-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        >
+          <span class="material-symbols-outlined">arrow_back_ios_new</span>
+        </button>
+        <h2
+          class="text-neutral-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          My Cart (3)
+        </h2>
+        <button
+          class="text-neutral-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        >
+          <span class="material-symbols-outlined">more_horiz</span>
+        </button>
+      </div>
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-y-auto no-scrollbar pb-32">
+        <!-- Item 1 -->
+        <div
+          class="flex gap-4 px-4 py-5 border-b border-neutral-100 dark:border-neutral-800/50"
+        >
+          <div class="flex items-start gap-4 w-full">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[88px] shrink-0 border border-neutral-100 dark:border-neutral-800 shadow-sm"
+              data-alt="bag of premium salmon cat food with colorful packaging"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAl0UjtH_ITPTyVe94Uax04yuNAywHXP2gCt5FMH5qGzS4eD9Ydo1AV288o3bJzaJ40EuFTSXidiskTb714CK5aEZC6YAWpFOI9kOnQY54YdD03zZdmhviZx4qAix_KIrzsULTRHVkebBxAMZl69i7yfhGSCBF-sZDD4yb3n5M6OMkMXpk4RaJP70pDliXB7VwWz0GEJ4ZX12gqAhbok0TBvyuJ_x3PC4aOsbD3I7EVNdnF9HnmNuQbxUy8TjSUerFy5pQywRgcF74');
+              "
+            ></div>
+            <div
+              class="flex flex-1 flex-col justify-between h-full min-h-[88px]"
+            >
+              <div class="flex justify-between items-start">
+                <div class="pr-2">
+                  <h3
+                    class="text-neutral-900 dark:text-white text-base font-semibold leading-tight mb-1"
+                  >
+                    Premium Salmon Cat Food
+                  </h3>
+                  <p
+                    class="text-neutral-500 dark:text-neutral-400 text-xs font-medium"
+                  >
+                    1kg Bag
+                  </p>
+                </div>
+                <button
+                  class="text-neutral-400 dark:text-neutral-600 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >delete</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-end mt-2">
+                <p class="text-neutral-900 dark:text-white text-lg font-bold">
+                  $24.00
+                </p>
+                <!-- Quantity Stepper -->
+                <div
+                  class="flex items-center gap-3 bg-neutral-100 dark:bg-neutral-800/50 rounded-full p-1 border border-neutral-200 dark:border-neutral-700"
+                >
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >remove</span
+                    >
+                  </button>
+                  <span class="text-sm font-semibold w-4 text-center">1</span>
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-black shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div
+          class="flex gap-4 px-4 py-5 border-b border-neutral-100 dark:border-neutral-800/50"
+        >
+          <div class="flex items-start gap-4 w-full">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[88px] shrink-0 border border-neutral-100 dark:border-neutral-800 shadow-sm"
+              data-alt="durable rubber chew toy for dogs on plain background"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuyNbYv9MXQ859oo9fX0riouQ7OXz3OPposWz8XUGnJMANGoREVe1KkDtMqtxJD4yt9HjniJbXhnptUrHdVI4pB9xGeNF0s1Vm-aG97TP3rw4TNwQGYT-0uSDX4lkR4JM4Yxsto7RY4ApcVaTNqF6nYMJt-eye5SCudHqsXBPkjuilGLjTxxGb7b_2OCECeXTAVdo8jaXeWCB_pBZFyfJEHYuAEXoLjzmvp4aHDlK82C28l_7JyJ3EYLAujJF4QQfTXbOoAqsxWco');
+              "
+            ></div>
+            <div
+              class="flex flex-1 flex-col justify-between h-full min-h-[88px]"
+            >
+              <div class="flex justify-between items-start">
+                <div class="pr-2">
+                  <h3
+                    class="text-neutral-900 dark:text-white text-base font-semibold leading-tight mb-1"
+                  >
+                    Durable Chew Toy
+                  </h3>
+                  <p
+                    class="text-neutral-500 dark:text-neutral-400 text-xs font-medium"
+                  >
+                    Size Medium • Blue
+                  </p>
+                </div>
+                <button
+                  class="text-neutral-400 dark:text-neutral-600 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >delete</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-end mt-2">
+                <p class="text-neutral-900 dark:text-white text-lg font-bold">
+                  $12.50
+                </p>
+                <!-- Quantity Stepper -->
+                <div
+                  class="flex items-center gap-3 bg-neutral-100 dark:bg-neutral-800/50 rounded-full p-1 border border-neutral-200 dark:border-neutral-700"
+                >
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >remove</span
+                    >
+                  </button>
+                  <span class="text-sm font-semibold w-4 text-center">2</span>
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-black shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div
+          class="flex gap-4 px-4 py-5 border-b border-neutral-100 dark:border-neutral-800/50"
+        >
+          <div class="flex items-start gap-4 w-full">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-[88px] shrink-0 border border-neutral-100 dark:border-neutral-800 shadow-sm"
+              data-alt="tin of organic paw balm for pets"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5DupEjjUDIAvwIVHR0xqSdvNLIC04Yq7DWPQrUjFp5u8NJULW5ZTSIQfMVedRAnPBO9KeuiylRGwmWWS7yVqkqSFLfSMiVi1E7g1smGtavVSgE8Oevxk9r9EB5siRej6fluQF4T16pUL5Tabnd9V8ExvrSNYT-uzHSiuCBh0C_Qk2laEu_MYa-1kdt4BoKd0pKS6W9y393_TOkdB3wX2fe99riqbT8DkMG-Ko73sOgmhgngkdhE5VsEPR25706_1g_mrQg7RVekQ');
+              "
+            ></div>
+            <div
+              class="flex flex-1 flex-col justify-between h-full min-h-[88px]"
+            >
+              <div class="flex justify-between items-start">
+                <div class="pr-2">
+                  <h3
+                    class="text-neutral-900 dark:text-white text-base font-semibold leading-tight mb-1"
+                  >
+                    Organic Paw Balm
+                  </h3>
+                  <p
+                    class="text-neutral-500 dark:text-neutral-400 text-xs font-medium"
+                  >
+                    30ml Tin
+                  </p>
+                </div>
+                <button
+                  class="text-neutral-400 dark:text-neutral-600 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >delete</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-end mt-2">
+                <p class="text-neutral-900 dark:text-white text-lg font-bold">
+                  $8.00
+                </p>
+                <!-- Quantity Stepper -->
+                <div
+                  class="flex items-center gap-3 bg-neutral-100 dark:bg-neutral-800/50 rounded-full p-1 border border-neutral-200 dark:border-neutral-700"
+                >
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >remove</span
+                    >
+                  </button>
+                  <span class="text-sm font-semibold w-4 text-center">1</span>
+                  <button
+                    class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-black shadow-sm hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Promo Code Input -->
+        <div class="p-4 pt-6">
+          <label
+            class="block mb-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 ml-1"
+            >Have a discount?</label
+          >
+          <div
+            class="flex w-full items-center rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 shadow-sm overflow-hidden focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all"
+          >
+            <div class="pl-4 text-neutral-400">
+              <span class="material-symbols-outlined">sell</span>
+            </div>
+            <input
+              class="w-full bg-transparent border-none text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:ring-0 py-3 px-3 text-base"
+              placeholder="Enter promo code"
+              value=""
+            />
+            <button
+              class="mr-2 text-sm font-bold text-primary hover:text-yellow-400 px-3 py-1.5 rounded-lg transition-colors"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+        <!-- Order Summary -->
+        <div
+          class="p-5 mt-2 mx-4 mb-6 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 shadow-sm"
+        >
+          <h3 class="text-neutral-900 dark:text-white text-lg font-bold mb-4">
+            Order Summary
+          </h3>
+          <div class="flex justify-between mb-3 text-sm">
+            <span class="text-neutral-500 dark:text-neutral-400">Subtotal</span>
+            <span class="text-neutral-900 dark:text-white font-medium"
+              >$57.00</span
+            >
+          </div>
+          <div class="flex justify-between mb-3 text-sm">
+            <span class="text-neutral-500 dark:text-neutral-400"
+              >Shipping Estimate</span
+            >
+            <span class="text-neutral-900 dark:text-white font-medium"
+              >$5.00</span
+            >
+          </div>
+          <div class="flex justify-between mb-4 text-sm">
+            <span class="text-neutral-500 dark:text-neutral-400">Tax</span>
+            <span class="text-neutral-900 dark:text-white font-medium"
+              >$0.00</span
+            >
+          </div>
+          <div
+            class="border-t border-neutral-100 dark:border-neutral-800 my-3"
+          ></div>
+          <div class="flex justify-between items-center">
+            <span class="text-neutral-900 dark:text-white text-base font-bold"
+              >Total</span
+            >
+            <span class="text-neutral-900 dark:text-white text-xl font-bold"
+              >$62.00</span
+            >
+          </div>
+        </div>
+        <!-- Safe Area Spacer -->
+        <div class="h-8"></div>
+      </div>
+      <!-- Sticky Footer -->
+      <div
+        class="absolute bottom-0 left-0 w-full bg-white dark:bg-background-dark border-t border-neutral-200 dark:border-neutral-800 p-4 pb-8 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-30"
+      >
+        <button
+          class="w-full flex items-center justify-between bg-primary hover:bg-[#eae605] active:bg-[#dcd804] text-black font-bold text-lg h-14 px-6 rounded-full transition-all shadow-lg shadow-primary/25"
+        >
+          <span>Checkout</span>
+          <span
+            class="bg-black/10 px-3 py-1 rounded-full text-base font-semibold"
+            >$62.00</span
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

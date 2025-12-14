@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PawCare+ Product Details</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f9f506",
+              "background-light": "#f8f8f5",
+              "background-dark": "#23220f",
+            },
+            fontFamily: {
+              display: ["Spline Sans", "Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              "2xl": "4rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar hiding for clean UI */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .material-symbols-outlined.fill {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#1c1c0d] dark:text-[#f2f2f2] font-display antialiased pb-32 selection:bg-primary selection:text-black"
+  >
+    <!-- Top App Bar -->
+    <nav
+      class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-200/50 dark:border-white/5"
+    >
+      <button
+        class="text-[#1c1c0d] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-black/5 dark:active:bg-white/10 transition-colors"
+      >
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <h2
+        class="text-[#1c1c0d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center"
+      >
+        Details
+      </h2>
+      <div class="flex w-10 items-center justify-end">
+        <button
+          class="relative flex items-center justify-center rounded-full size-10 text-[#1c1c0d] dark:text-white active:bg-black/5 dark:active:bg-white/10 transition-colors"
+        >
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span
+            class="absolute top-1 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-black border-2 border-background-light dark:border-background-dark"
+            >2</span
+          >
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex flex-col w-full overflow-x-hidden pt-2">
+      <!-- Hero Image Carousel -->
+      <div class="px-4 w-full">
+        <div
+          class="relative w-full aspect-square rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-sm group"
+        >
+          <div
+            class="w-full h-full bg-center bg-cover bg-no-repeat transition-transform duration-700 hover:scale-105"
+            data-alt="Bag of premium dog food on a bright yellow background"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbXgH1q8FU0_kfpnQycvFxYYg4WhdMiF7fwwBgEPLQKxhiXVL9PWDV6zc4yrZ2MRiLvodvvL6tW-SK85Sm_h2OAOBXnFKPuAj6T_VGE2DzJuba8ufbGBaFCXzAYLf7xSwzjTNczZg7DSShzFQkK65TNWPoKshDgKCX3FX2bUbMwO361Fotmm-YaxZjCC4UI0CNgrKhLvvRiIw83orR4rRI3hY54bnsCDoZzd2ejHMY-TsLQVXbRPduav1scMxNwMm-6VTwtfFK49w');
+            "
+          ></div>
+          <!-- Badge -->
+          <div
+            class="absolute top-4 left-4 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm"
+          >
+            <span
+              class="text-xs font-bold text-black dark:text-white uppercase tracking-wider"
+              >Organic</span
+            >
+          </div>
+          <!-- Pagination Dots (Visual Only) -->
+          <div
+            class="absolute bottom-4 left-0 right-0 flex justify-center gap-2"
+          >
+            <div class="w-2 h-2 rounded-full bg-primary"></div>
+            <div class="w-2 h-2 rounded-full bg-white/50 backdrop-blur"></div>
+            <div class="w-2 h-2 rounded-full bg-white/50 backdrop-blur"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Header Info -->
+      <div class="px-5 pt-6 flex flex-col gap-1">
+        <div class="flex justify-between items-start gap-4">
+          <h1
+            class="text-[#1c1c0d] dark:text-white tracking-tight text-[28px] font-bold leading-tight"
+          >
+            Happy Hounds Formula
+          </h1>
+          <div class="flex flex-col items-end">
+            <span class="text-2xl font-bold text-[#1c1c0d] dark:text-white"
+              >$45.00</span
+            >
+          </div>
+        </div>
+        <!-- Quick Rating Summary -->
+        <div class="flex items-center gap-2 mt-1 cursor-pointer">
+          <span class="material-symbols-outlined text-primary fill text-[20px]"
+            >star</span
+          >
+          <span class="text-base font-bold text-[#1c1c0d] dark:text-white"
+            >4.8</span
+          >
+          <span
+            class="text-sm text-gray-500 dark:text-gray-400 font-medium underline decoration-dotted underline-offset-4"
+            >(120 Reviews)</span
+          >
+        </div>
+      </div>
+      <!-- Size Selector -->
+      <div class="px-5 mt-8">
+        <h3
+          class="text-sm font-bold text-[#1c1c0d] dark:text-white mb-3 uppercase tracking-wide opacity-80"
+        >
+          Select Size
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <button
+            class="px-6 py-3 rounded-full bg-primary text-[#1c1c0d] font-bold text-sm shadow-sm ring-2 ring-primary ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark transition-all"
+          >
+            5 lb bag
+          </button>
+          <button
+            class="px-6 py-3 rounded-full bg-white dark:bg-[#333118] border border-gray-200 dark:border-gray-700 text-[#1c1c0d] dark:text-gray-300 font-medium text-sm hover:border-primary dark:hover:border-primary transition-colors"
+          >
+            10 lb bag
+          </button>
+          <button
+            class="px-6 py-3 rounded-full bg-white dark:bg-[#333118] border border-gray-200 dark:border-gray-700 text-[#1c1c0d] dark:text-gray-300 font-medium text-sm hover:border-primary dark:hover:border-primary transition-colors"
+          >
+            25 lb bag
+          </button>
+        </div>
+      </div>
+      <!-- Description -->
+      <div class="px-5 mt-8">
+        <h3
+          class="text-sm font-bold text-[#1c1c0d] dark:text-white mb-3 uppercase tracking-wide opacity-80"
+        >
+          Description
+        </h3>
+        <div class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+          <p>
+            Designed for active dogs, our Happy Hounds Formula is a nutritious
+            blend of free-range chicken and organic sweet potato. Grain-free and
+            packed with essential vitamins to keep your pup's tail wagging all
+            day long.
+          </p>
+          <button
+            class="text-primary dark:text-primary mt-2 text-sm font-bold flex items-center gap-0.5"
+          >
+            Read more
+            <span class="material-symbols-outlined text-[16px]"
+              >expand_more</span
+            >
+          </button>
+        </div>
+      </div>
+      <!-- Detailed Ratings Block -->
+      <div
+        class="mt-10 pt-8 border-t border-gray-200/60 dark:border-white/5 mx-5"
+      >
+        <h3 class="text-lg font-bold text-[#1c1c0d] dark:text-white mb-6">
+          Ratings &amp; Reviews
+        </h3>
+        <div class="flex flex-wrap gap-x-8 gap-y-6">
+          <!-- Score Column -->
+          <div class="flex flex-col gap-1 items-start min-w-[100px]">
+            <p
+              class="text-[#1c1c0d] dark:text-white text-5xl font-black leading-none tracking-[-0.033em]"
+            >
+              4.8
+            </p>
+            <div class="flex gap-0.5 my-2">
+              <span
+                class="material-symbols-outlined text-primary fill text-[18px]"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary fill text-[18px]"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary fill text-[18px]"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-primary fill text-[18px]"
+                >star</span
+              >
+              <span class="material-symbols-outlined text-primary text-[18px]"
+                >star</span
+              >
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+              Based on 120 reviews
+            </p>
+          </div>
+          <!-- Bars Column -->
+          <div
+            class="grid flex-1 min-w-[200px] grid-cols-[16px_1fr_32px] items-center gap-y-2 gap-x-3"
+          >
+            <!-- 5 Star -->
+            <p
+              class="text-gray-600 dark:text-gray-300 text-xs font-medium text-right"
+            >
+              5
+            </p>
+            <div
+              class="flex h-2 w-full overflow-hidden rounded-full bg-[#e9e8ce] dark:bg-gray-700"
+            >
+              <div class="rounded-full bg-primary" style="width: 78%"></div>
+            </div>
+            <p class="text-gray-400 text-xs font-medium text-right">78%</p>
+            <!-- 4 Star -->
+            <p
+              class="text-gray-600 dark:text-gray-300 text-xs font-medium text-right"
+            >
+              4
+            </p>
+            <div
+              class="flex h-2 w-full overflow-hidden rounded-full bg-[#e9e8ce] dark:bg-gray-700"
+            >
+              <div class="rounded-full bg-primary" style="width: 12%"></div>
+            </div>
+            <p class="text-gray-400 text-xs font-medium text-right">12%</p>
+            <!-- 3 Star -->
+            <p
+              class="text-gray-600 dark:text-gray-300 text-xs font-medium text-right"
+            >
+              3
+            </p>
+            <div
+              class="flex h-2 w-full overflow-hidden rounded-full bg-[#e9e8ce] dark:bg-gray-700"
+            >
+              <div class="rounded-full bg-primary" style="width: 5%"></div>
+            </div>
+            <p class="text-gray-400 text-xs font-medium text-right">5%</p>
+            <!-- 2 Star -->
+            <p
+              class="text-gray-600 dark:text-gray-300 text-xs font-medium text-right"
+            >
+              2
+            </p>
+            <div
+              class="flex h-2 w-full overflow-hidden rounded-full bg-[#e9e8ce] dark:bg-gray-700"
+            >
+              <div class="rounded-full bg-primary" style="width: 2%"></div>
+            </div>
+            <p class="text-gray-400 text-xs font-medium text-right">2%</p>
+            <!-- 1 Star -->
+            <p
+              class="text-gray-600 dark:text-gray-300 text-xs font-medium text-right"
+            >
+              1
+            </p>
+            <div
+              class="flex h-2 w-full overflow-hidden rounded-full bg-[#e9e8ce] dark:bg-gray-700"
+            >
+              <div class="rounded-full bg-primary" style="width: 3%"></div>
+            </div>
+            <p class="text-gray-400 text-xs font-medium text-right">3%</p>
+          </div>
+        </div>
+        <button
+          class="w-full py-3 mt-6 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-bold text-[#1c1c0d] dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+        >
+          View all reviews
+        </button>
+      </div>
+      <!-- Related Products (Carousel) -->
+      <div class="mt-10 mb-4 pb-4">
+        <h3
+          class="px-5 text-sm font-bold text-[#1c1c0d] dark:text-white mb-4 uppercase tracking-wide opacity-80"
+        >
+          You might also like
+        </h3>
+        <div
+          class="flex overflow-x-auto scrollbar-hide px-5 gap-4 snap-x snap-mandatory"
+        >
+          <!-- Card 1 -->
+          <div class="flex-none w-[140px] snap-start">
+            <div class="flex flex-col gap-2">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-2xl bg-gray-100 dark:bg-gray-800 relative overflow-hidden"
+                data-alt="Bag of dental chews for dogs"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4cFrYFxYWo0VPSFoRNrbq0ukKlH84V1j7edPKfD9bW8R27HVJTQ20d9SdAknTDFrY6nVfc9L_nJd-Dxhoz6JOUdpu-EVEBJqcw77IMHSiaSgXdfP6s2S-Kcnt50rSTZXYHxlCC22rJxZckZ2_EDybxFhafOmYwWV2Zh3N_D1t8hAP__59rJFGzPJIGSay98uxI3yaLmusZXuxeqHaE_DW6mp-xPKL5MHJeCZV6vDqUWb36xjjPwnAL6ZM4w38sJctynqnQ4km1Mc');
+                "
+              >
+                <button
+                  class="absolute top-2 right-2 p-1.5 bg-white/50 backdrop-blur rounded-full text-black hover:bg-white transition"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+              <div>
+                <p
+                  class="font-bold text-sm text-[#1c1c0d] dark:text-white truncate"
+                >
+                  Dental Chews
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">$12.50</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="flex-none w-[140px] snap-start">
+            <div class="flex flex-col gap-2">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-2xl bg-gray-100 dark:bg-gray-800 relative overflow-hidden"
+                data-alt="Pattern of rubber dog toys on blue background"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8Wx6o0i_7uciEs-7IaBC7rmCNblJcmdCUdMHV7GhWWjuELROZX7bwYgGYRzec7QE38CH_l5aJgNu1usBvX_A8eYar4KCHa2eLG62LSxRUUojMh8SMDyv-ONFbzRVgCNIOoyqi_MCuICytEUjxMKyRlK_1Xsa5Wep2On2-2qjR3tWvigds3qwXIfP-HHThw3c9MnmRzg7qMDAp8stUZluGbCrsaiQnT0xtzcxu95Ky7kVvCQayGR3KNnGSUU-WIm7N37wcWjdKAV0');
+                "
+              >
+                <button
+                  class="absolute top-2 right-2 p-1.5 bg-white/50 backdrop-blur rounded-full text-black hover:bg-white transition"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+              <div>
+                <p
+                  class="font-bold text-sm text-[#1c1c0d] dark:text-white truncate"
+                >
+                  Rubber Ball
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">$8.00</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="flex-none w-[140px] snap-start">
+            <div class="flex flex-col gap-2">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-2xl bg-gray-100 dark:bg-gray-800 relative overflow-hidden"
+                data-alt="Close up of dog collar texture"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR_3rVTfDIZSbF_68NG3d_bh9VqCEvUlaHWkJ5r_XUxmxyK0mSRHwM1mA5hSAv8CAI2vCFv9gbSXuNPi_j_EF-8nyGHY-y6qAFAAm6TWXzMb10237ggFmAHe9xnNZSPZwu4tl2OiVQiL_WXo5eoCPiLbul13k2ObXUqpAGp-P6hXP1nBeX-a5mEwotC5mh5vsCPNKdFpvwIJ3gfV7BYpNG71jyat1Z3Q-soSBcbrJz-Po0U4vkeLmwbefDA3SjSzc8T5vZSG5SCo8');
+                "
+              >
+                <button
+                  class="absolute top-2 right-2 p-1.5 bg-white/50 backdrop-blur rounded-full text-black hover:bg-white transition"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+              <div>
+                <p
+                  class="font-bold text-sm text-[#1c1c0d] dark:text-white truncate"
+                >
+                  Nylon Collar
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">$15.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Sticky Bottom Bar -->
+    <div
+      class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 dark:bg-[#1a190b]/90 backdrop-blur-xl border-t border-gray-200/50 dark:border-white/5 px-4 pb-8 pt-4"
+    >
+      <div class="flex items-center gap-4 max-w-lg mx-auto">
+        <!-- Quantity Selector -->
+        <div
+          class="flex items-center justify-between h-14 bg-gray-100 dark:bg-[#2c2b1a] rounded-full px-1 min-w-[120px]"
+        >
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-[#383724] text-[#1c1c0d] dark:text-white shadow-sm hover:scale-105 transition-transform"
+          >
+            <span class="material-symbols-outlined text-[20px]">remove</span>
+          </button>
+          <span
+            class="text-lg font-bold text-[#1c1c0d] dark:text-white w-6 text-center"
+            >1</span
+          >
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-[#383724] text-[#1c1c0d] dark:text-white shadow-sm hover:scale-105 transition-transform"
+          >
+            <span class="material-symbols-outlined text-[20px]">add</span>
+          </button>
+        </div>
+        <!-- Add to Cart Button -->
+        <button
+          class="flex-1 h-14 bg-primary rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all group"
+        >
+          <span
+            class="text-[#1c1c0d] font-bold text-base group-hover:mr-1 transition-all"
+            >Add to Cart</span
+          >
+          <span
+            class="text-[#1c1c0d] font-normal text-sm opacity-80 border-l border-black/10 pl-2"
+            >$45.00</span
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
