@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Main Container -->
+    <div class="flex h-screen overflow-hidden">
+      <!-- Sidebar -->
+      <aside
+        class="hidden md:flex md:flex-col w-64 bg-white border-r border-gray-200"
+      >
+        <!-- Logo -->
+        <div
+          class="flex items-center justify-center h-16 border-b border-gray-200"
+        >
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-8 h-8 text-orange-600"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+              />
+            </svg>
+            <span class="text-xl font-bold text-gray-800">PetStore</span>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto py-4">
+          <a
+            href="#dashboard"
+            class="flex items-center px-6 py-3 text-gray-700 bg-orange-50 border-r-4 border-orange-600"
+          >
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+              />
+            </svg>
+            Dashboard
+          </a>
+          <a
+            href="#products"
+            class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50"
+          >
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Products
+          </a>
+          <a
+            href="#orders"
+            class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50"
+          >
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+              <path
+                fill-rule="evenodd"
+                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Orders
+          </a>
+          <a
+            href="#inventory"
+            class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50"
+          >
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+              <path
+                fill-rule="evenodd"
+                d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Inventory
+          </a>
+          <a
+            href="#analytics"
+            class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-50"
+          >
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+              />
+            </svg>
+            Analytics
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Top Navbar -->
+        <header class="bg-white border-b border-gray-200 h-16">
+          <div class="flex items-center justify-between h-full px-4">
+            <button class="md:hidden text-gray-600">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="flex-1 max-w-md mx-4">
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <button class="relative text-gray-600 hover:text-gray-800">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
+                  />
+                </svg>
+                <span
+                  class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"
+                ></span>
+              </button>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="/placeholder.svg?height=40&width=40"
+                  alt="Seller"
+                  class="w-10 h-10 rounded-full"
+                />
+                <span class="hidden sm:block text-sm font-medium text-gray-700"
+                  >Pet Supplies Co.</span
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-6">
+          <!-- Welcome Section -->
+          <div class="mb-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+              Seller Dashboard
+            </h1>
+            <p class="text-gray-600 mt-1">
+              Manage your products and track your sales performance.
+            </p>
+          </div>
+
+          <!-- Stats Cards -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
+          >
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600">Total Products</p>
+                  <p class="text-2xl font-bold text-gray-800 mt-1">156</p>
+                  <p class="text-xs text-green-600 mt-1">+12 this month</p>
+                </div>
+                <div class="bg-orange-100 rounded-full p-3">
+                  <svg
+                    class="w-6 h-6 text-orange-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600">Total Orders</p>
+                  <p class="text-2xl font-bold text-gray-800 mt-1">1,247</p>
+                  <p class="text-xs text-green-600 mt-1">
+                    +23% from last month
+                  </p>
+                </div>
+                <div class="bg-blue-100 rounded-full p-3">
+                  <svg
+                    class="w-6 h-6 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600">Revenue</p>
+                  <p class="text-2xl font-bold text-gray-800 mt-1">$45,231</p>
+                  <p class="text-xs text-green-600 mt-1">
+                    +18% from last month
+                  </p>
+                </div>
+                <div class="bg-green-100 rounded-full p-3">
+                  <svg
+                    class="w-6 h-6 text-green-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-gray-600">Low Stock Items</p>
+                  <p class="text-2xl font-bold text-gray-800 mt-1">23</p>
+                  <p class="text-xs text-red-600 mt-1">Needs attention</p>
+                </div>
+                <div class="bg-red-100 rounded-full p-3">
+                  <svg
+                    class="w-6 h-6 text-red-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manage Products Section -->
+          <section class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-bold text-gray-800">Manage Products</h2>
+              <button
+                class="px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700"
+              >
+                + Add Product
+              </button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead class="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Product
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Category
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Price
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Stock
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Actions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center">
+                          <img
+                            src="/placeholder.svg?height=50&width=50"
+                            alt="Product"
+                            class="w-12 h-12 rounded mr-3"
+                          />
+                          <div>
+                            <p class="text-sm font-medium text-gray-900">
+                              Premium Dog Food
+                            </p>
+                            <p class="text-xs text-gray-500">SKU: DF-001</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">Food</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $45.99
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">234</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                          >Active</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">
+                        <button
+                          class="text-orange-600 hover:text-orange-700 mr-3"
+                        >
+                          Edit
+                        </button>
+                        <button class="text-red-600 hover:text-red-700">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center">
+                          <img
+                            src="/placeholder.svg?height=50&width=50"
+                            alt="Product"
+                            class="w-12 h-12 rounded mr-3"
+                          />
+                          <div>
+                            <p class="text-sm font-medium text-gray-900">
+                              Cat Litter Box
+                            </p>
+                            <p class="text-xs text-gray-500">SKU: CL-015</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        Accessories
+                      </td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $29.99
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">87</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                          >Active</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">
+                        <button
+                          class="text-orange-600 hover:text-orange-700 mr-3"
+                        >
+                          Edit
+                        </button>
+                        <button class="text-red-600 hover:text-red-700">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center">
+                          <img
+                            src="/placeholder.svg?height=50&width=50"
+                            alt="Product"
+                            class="w-12 h-12 rounded mr-3"
+                          />
+                          <div>
+                            <p class="text-sm font-medium text-gray-900">
+                              Pet Vitamins
+                            </p>
+                            <p class="text-xs text-gray-500">SKU: PV-023</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">Health</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $34.99
+                      </td>
+                      <td class="px-6 py-4 text-sm text-red-600 font-medium">
+                        12
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800"
+                          >Low Stock</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">
+                        <button
+                          class="text-orange-600 hover:text-orange-700 mr-3"
+                        >
+                          Edit
+                        </button>
+                        <button class="text-red-600 hover:text-red-700">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center">
+                          <img
+                            src="/placeholder.svg?height=50&width=50"
+                            alt="Product"
+                            class="w-12 h-12 rounded mr-3"
+                          />
+                          <div>
+                            <p class="text-sm font-medium text-gray-900">
+                              Interactive Dog Toy
+                            </p>
+                            <p class="text-xs text-gray-500">SKU: DT-108</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">Toys</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $19.99
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">156</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                          >Active</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">
+                        <button
+                          class="text-orange-600 hover:text-orange-700 mr-3"
+                        >
+                          Edit
+                        </button>
+                        <button class="text-red-600 hover:text-red-700">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Recent Orders Section -->
+          <section class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-bold text-gray-800">Recent Orders</h2>
+              <a
+                href="#"
+                class="text-orange-600 hover:text-orange-700 text-sm font-medium"
+                >View all</a
+              >
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead class="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Order ID
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Customer
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Items
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Total
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                      >
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        #ORD-5621
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        Jennifer Wilson
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-600">
+                        Dec 18, 2024
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">3 items</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $125.97
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800"
+                          >Processing</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        #ORD-5620
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        Robert Martinez
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-600">
+                        Dec 18, 2024
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">1 item</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $45.99
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800"
+                          >Shipped</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        #ORD-5619
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">
+                        Linda Anderson
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-600">
+                        Dec 17, 2024
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-900">5 items</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                        $234.95
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                          >Delivered</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Inventory Status Section -->
+          <section class="mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">
+              Inventory Status
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-sm font-medium text-gray-600">In Stock</h3>
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded bg-green-100 text-green-800"
+                    >Good</span
+                  >
+                </div>
+                <p class="text-3xl font-bold text-gray-800">133</p>
+                <p class="text-sm text-gray-600 mt-1">85% of total products</p>
+                <div class="mt-3 bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-sm font-medium text-gray-600">Low Stock</h3>
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded bg-yellow-100 text-yellow-800"
+                    >Warning</span
+                  >
+                </div>
+                <p class="text-3xl font-bold text-gray-800">23</p>
+                <p class="text-sm text-gray-600 mt-1">15% of total products</p>
+                <div class="mt-3 bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-yellow-500 h-2 rounded-full"
+                    style="width: 15%"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-sm font-medium text-gray-600">
+                    Out of Stock
+                  </h3>
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded bg-red-100 text-red-800"
+                    >Critical</span
+                  >
+                </div>
+                <p class="text-3xl font-bold text-gray-800">0</p>
+                <p class="text-sm text-gray-600 mt-1">0% of total products</p>
+                <div class="mt-3 bg-gray-200 rounded-full h-2">
+                  <div
+                    class="bg-red-500 h-2 rounded-full"
+                    style="width: 0%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sales Analytics Section -->
+          <section>
+            <h2 class="text-xl font-bold text-gray-800 mb-4">
+              Sales Analytics
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <!-- Chart Placeholder -->
+              <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                  Monthly Revenue
+                </h3>
+                <div
+                  class="flex items-end justify-between h-64 border-b border-gray-200"
+                >
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 65%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">Jan</span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 75%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">Feb</span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 55%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">Mar</span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 85%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">Apr</span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 70%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">May</span>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-end w-full mx-1"
+                  >
+                    <div
+                      class="bg-orange-500 w-full rounded-t"
+                      style="height: 90%"
+                    ></div>
+                    <span class="text-xs text-gray-600 mt-2">Jun</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Top Products -->
+              <div class="bg-white rounded-lg shadow-sm p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                  Top Selling Products
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <img
+                        src="/placeholder.svg?height=40&width=40"
+                        alt="Product"
+                        class="w-10 h-10 rounded mr-3"
+                      />
+                      <div>
+                        <p class="text-sm font-medium text-gray-900">
+                          Premium Dog Food
+                        </p>
+                        <p class="text-xs text-gray-500">487 units sold</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-900"
+                      >$22,391</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <img
+                        src="/placeholder.svg?height=40&width=40"
+                        alt="Product"
+                        class="w-10 h-10 rounded mr-3"
+                      />
+                      <div>
+                        <p class="text-sm font-medium text-gray-900">
+                          Interactive Cat Toy
+                        </p>
+                        <p class="text-xs text-gray-500">356 units sold</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-900"
+                      >$8,896</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <img
+                        src="/placeholder.svg?height=40&width=40"
+                        alt="Product"
+                        class="w-10 h-10 rounded mr-3"
+                      />
+                      <div>
+                        <p class="text-sm font-medium text-gray-900">
+                          Luxury Pet Bed
+                        </p>
+                        <p class="text-xs text-gray-500">289 units sold</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-900"
+                      >$23,111</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <img
+                        src="/placeholder.svg?height=40&width=40"
+                        alt="Product"
+                        class="w-10 h-10 rounded mr-3"
+                      />
+                      <div>
+                        <p class="text-sm font-medium text-gray-900">
+                          Pet Vitamins
+                        </p>
+                        <p class="text-xs text-gray-500">234 units sold</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-900"
+                      >$8,188</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
